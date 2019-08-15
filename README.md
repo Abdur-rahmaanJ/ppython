@@ -7,7 +7,7 @@ release name: omri
 
 stability: alpha, highly volatile, more to be completed
 
-# Running 
+# Running
 
 ```
 cd ppython/ppython
@@ -18,11 +18,11 @@ python ppython.py <path-to-file>/file.py
 
 Had this project around, removed it from the fossils graveyard when Dr. Omri Har-Shemesh came to our Python meetup, inspired by his high physics background, i was reminded of this in my cupboard and decided to open it to the world.
 
-Please don't see the source code (ppython.py) else you'll chase me out of the Python kindom
+Please don't see the source code (ppython.py) else you'll chase me out of the Python kingdom
 
 # Why a pure python version?
 
-To simply take advantage of the huge number of machine learning, data science and normal packages availble
+To simply take advantage of the huge number of machine learning, data science and normal packages available
 
 # Dependencies
 
@@ -203,7 +203,7 @@ class Particle:
         self.draw()
 
 particles = [Particle(
-                random(0, width), random(0, width), vx=2, vy=2, randv=True) 
+                random(0, width), random(0, width), vx=2, vy=2, randv=True)
             for i in range(200)]
 def setup():
     pass
