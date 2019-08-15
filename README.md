@@ -66,7 +66,7 @@ def draw():
 python ppython.py snippets/winlogo.py
 ```
 
-![](ppython/images/ppython_winlogo.gif)
+![](ppython/images/ppython_winlogo.jpg)
 
 code:
 
@@ -116,7 +116,7 @@ def draw():
 python ppython.py snippets/line_graph.py
 ```
 
-![](ppython/images/ppython_linegraph.gif)
+![](ppython/images/ppython_linegraph.jpg)
 
 code:
 
