@@ -3,7 +3,7 @@ Implementation of [processing.org](https://www.processing.org)'s processing in p
 
 # Info
 
-release name: omri
+Release name: omri
 
 stability: alpha, highly volatile, more to be completed
 
@@ -219,7 +219,7 @@ def draw():
 
 - setup()
 
-used to initialise what will be used only once
+Used to initialise what will be used only once
 
 - draw()
 
@@ -259,7 +259,7 @@ fill(r, g, b, a)
 fill(grayness) # fill(100) equals fill(100, 100, 100)
 ```
 
-used to colour shapes
+Used to colour shapes
 
 - stroke()
 
@@ -269,7 +269,7 @@ stroke(r, g, b, a)
 stroke(grayness) # stroke(100) equals stroke(100, 100, 100)
 ```
 
-used to colour lines and boarders of shapes
+Used to colour lines and boarders of shapes
 
 - strokeSize()
 
@@ -277,7 +277,7 @@ used to colour lines and boarders of shapes
 strokeSize(thickness)
 ```
 
-used to define borders of shapes
+Used to define borders of shapes
 
 - noFill()
 
@@ -285,7 +285,7 @@ used to define borders of shapes
 noFill()
 ```
 
-removes filling
+Removes filling
 
 - noStroke()
 
@@ -293,7 +293,7 @@ removes filling
 noStroke()
 ```
 
-removes strokes
+Removes strokes
 
 - random()
 
@@ -301,4 +301,4 @@ removes strokes
 random(start, end)
 ```
 
-returns integer inclusive of start, exclusive of end
+Returns integer inclusive of start, exclusive of end
