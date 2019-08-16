@@ -20,31 +20,50 @@ class ppp:
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
     
-    def stroke(self, r, g, b):
-        self.Stroke_ = '#%02x%02x%02x' % (r, g, b)
+    def stroke(self, color):
+        self.Stroke_ = color
     
-    def fill(self, r, g, b):
-        self.Fill_ = '#%02x%02x%02x' % (r, g, b)
+    def fill(self, color):
+        self.Fill_ = color
     
     def strokeSize(self, size):
         self.StrokeSize_ = size
     
     def ellipse(self, x, y, sizeX, sizeY):
-        self.canvas.create_oval(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_)
+        self.canvas.create_oval(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
+            outline=self.Stroke_)
     
     def rect(self, x, y, sizeX, sizeY):
-        self.canvas.create_rectangle(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_)
+        self.canvas.create_rectangle(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
+            outline=self.Stroke_)
     
-    def background(self, r, g, b):
+    def background(self, bgfill):
         self.canvas.delete("all")
-        bgfill = '#%02x%02x%02x' % (r, g, b)
         self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=bgfill)
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
     
-def stroke(r, g, b):
-    _p.stroke(r, g, b)
+def stroke(*args):
+    color = ''
+    if len(args) == 1:
+        r = args[0]
+        g = args[0]
+        b = args[0]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 3:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 4:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        a = args[3]
+        if not a:
+            color = ''
+    _p.stroke(color)
 
 def noStroke():
     _p.strokeSize(0)
@@ -52,11 +71,47 @@ def noStroke():
 def noFill():
     _p.fill("")
 
-def background(r, g, b):
-    _p.background(r, g, b)
+def background(*args):
+    color = ''
+    if len(args) == 1:
+        r = args[0]
+        g = args[0]
+        b = args[0]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 3:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 4:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        a = args[3]
+        if not a:
+            color = ''
+    _p.background(color)
 
-def fill(r, g, b):
-    _p.fill(r, g, b)
+def fill(*args):
+    color = ''
+    if len(args) == 1:
+        r = args[0]
+        g = args[0]
+        b = args[0]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 3:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        color = '#%02x%02x%02x' % (r, g, b)
+    if len(args) == 4:
+        r = args[0]
+        g = args[1]
+        b = args[2]
+        a = args[3]
+        if not a:
+            color = ''
+    _p.fill(color)
 
 def strokeSize(thickness):
     _p.strokeSize(thickness)

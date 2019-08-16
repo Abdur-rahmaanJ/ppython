@@ -247,12 +247,16 @@ ellipse(x, y, width, height)
 
 ```python
 background(r, g, b)
+background(r, g, b, a)
+background(grayness) # background(100) equals background(100, 100, 100)
 ```
 
 - fill()
 
 ```python
 fill(r, g, b)
+fill(r, g, b, a)
+fill(grayness) # fill(100) equals fill(100, 100, 100)
 ```
 
 used to colour shapes
@@ -261,6 +265,8 @@ used to colour shapes
 
 ```python
 stroke(r, g, b)
+stroke(r, g, b, a)
+stroke(grayness) # stroke(100) equals stroke(100, 100, 100)
 ```
 
 used to colour lines and boarders of shapes
