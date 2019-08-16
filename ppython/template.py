@@ -16,6 +16,7 @@ class ppp:
         self.canvas.grid(row=0, column=0)
         self.width = int(self.canvas.cget("width"))
         self.height = int(self.canvas.cget("height"))
+        self.points = []
             
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
@@ -40,6 +41,10 @@ class ppp:
     def background(self, bgfill):
         self.canvas.delete("all")
         self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=bgfill)
+
+    def polygon(self):
+        self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
+            outline=self.Stroke_)
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
@@ -66,7 +71,7 @@ def stroke(*args):
     _p.stroke(color)
 
 def noStroke():
-    _p.strokeSize(0)
+    _p.Stroke_ = ""
 
 def noFill():
     _p.fill("")
@@ -125,6 +130,16 @@ def rect(x, y, sizeX, sizeY):
 def random(s, e):
     #global random
     return randint(s, e)
+
+def beginShape():
+    _p.points = []
+
+def vertex(x, y):
+    _p.points.append(x)
+    _p.points.append(y)
+
+def endShape(*args):
+    _p.polygon()
 
 
     

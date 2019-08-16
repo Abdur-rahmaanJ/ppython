@@ -1,9 +1,7 @@
-def setup():
-    pass
+def triangle(x1, y1, x2, y2, x3, y3):
+    beginShape()
+    vertex(x1, y1)
+    vertex(x2, y2)
+    vertex(x3, y3)
+    endShape()
 
-def draw():
-    background(100)
-    fill(200)
-    stroke(150)
-    ellipse(10, 10, 50, 50)
-    rect(10, 10, 50, 50)

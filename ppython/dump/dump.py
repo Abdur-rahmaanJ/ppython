@@ -16,6 +16,7 @@ class ppp:
         self.canvas.grid(row=0, column=0)
         self.width = int(self.canvas.cget("width"))
         self.height = int(self.canvas.cget("height"))
+        self.points = []
             
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
@@ -40,6 +41,10 @@ class ppp:
     def background(self, bgfill):
         self.canvas.delete("all")
         self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=bgfill)
+
+    def polygon(self):
+        self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
+            outline=self.Stroke_)
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
@@ -66,7 +71,7 @@ def stroke(*args):
     _p.stroke(color)
 
 def noStroke():
-    _p.strokeSize(0)
+    _p.Stroke_ = ""
 
 def noFill():
     _p.fill("")
@@ -126,6 +131,16 @@ def random(s, e):
     #global random
     return randint(s, e)
 
+def beginShape():
+    _p.points = []
+
+def vertex(x, y):
+    _p.points.append(x)
+    _p.points.append(y)
+
+def endShape(*args):
+    _p.polygon()
+
 
     
 from tkinter import *
@@ -137,18 +152,36 @@ _p = ppp(root)
 width = _p.width
 height = _p.height
 
+def triangle(x1, y1, x2, y2, x3, y3):
+    beginShape()
+    vertex(x1, y1)
+    vertex(x2, y2)
+    vertex(x3, y3)
+    endShape()
+
 def setup():
     global width, height, mouseX, mouseY
-    pass
+    background(255)
+    
+    noStroke()
+    step = width//5
+    for x in range(0, width, 50):
+        for y in range(0, width, 50):
+            fill(random(0, 255), random(0, 255), random(0, 255))
+            triangle(
+                random(x, x+50),
+                random(y, y+50),
+                random(x, x+50),
+                random(y, y+50),
+                random(x, x+50),
+                random(y, y+50)
+                )
+
 
 def draw():
     global root, width, height, mouseX, mouseY
     mouseX = _p.mouseX; mouseY = _p.mouseY
-    background(100)
-    fill(200)
-    stroke(150)
-    ellipse(10, 10, 50, 50)
-    rect(10, 10, 50, 50)
+    pass
     root.after(30, draw)
 setup()
 draw()

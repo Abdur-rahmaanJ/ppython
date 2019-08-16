@@ -215,6 +215,36 @@ def draw():
         p.run()
 ```
 
+## Grid Triangles
+
+```
+python ppython.py snippets/rand_triangles.py
+```
+
+![](ppython/images/ppython_rand_triangles.jpg)
+
+code:
+
+```python
+def setup():
+    background(255)
+    noStroke()
+    for x in range(0, width, 50):
+        for y in range(0, width, 50):
+            fill(random(0, 255), random(0, 255), random(0, 255))
+            triangle(
+                random(x, x+50),
+                random(y, y+50),
+                random(x, x+50),
+                random(y, y+50),
+                random(x, x+50),
+                random(y, y+50)
+                )
+
+def draw():
+    pass
+```
+
 # Docs
 
 - setup()
