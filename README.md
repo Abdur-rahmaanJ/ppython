@@ -1,5 +1,5 @@
 # ppython
-Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python).
+Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python). No dependency, no import and no run()
 
 # Info
 
@@ -23,6 +23,20 @@ Please don't see the source code (ppython.py) else you'll chase me out of the Py
 # Why a pure python version?
 
 To simply take advantage of the huge number of machine learning, data science and normal packages available
+
+# How is this different from p5py?
+
+- no dependency
+
+requires only tkinter
+
+- no imports
+
+you only run your code as it should. no from x import *
+
+- no run()
+
+no need to call run() at the end
 
 # Dependencies
 
