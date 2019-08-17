@@ -162,9 +162,7 @@ def triangle(x1, y1, x2, y2, x3, y3):
 def setup():
     global width, height, mouseX, mouseY
     background(255)
-    
     noStroke()
-    step = width//5
     for x in range(0, width, 50):
         for y in range(0, width, 50):
             fill(random(0, 255), random(0, 255), random(0, 255))
@@ -176,7 +174,6 @@ def setup():
                 random(x, x+50),
                 random(y, y+50)
                 )
-
 
 def draw():
     global root, width, height, mouseX, mouseY

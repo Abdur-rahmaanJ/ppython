@@ -363,3 +363,10 @@ vertex(x2, y2)
 vertex(x3, y3)
 endShape()
 ```
+- mouseX
+
+position of x-coord of mouse
+
+- mouseY
+
+position of y-coord of mouse
