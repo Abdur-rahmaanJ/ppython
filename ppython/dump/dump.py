@@ -1,5 +1,4 @@
-#from ppp import *
-from random import *
+import random as rand
 from math import *
 from tkinter import *
 
@@ -127,9 +126,18 @@ def ellipse(x, y, sizeX, sizeY):
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
    
-def random(s, e):
-    #global random
-    return randint(s, e)
+def random(*args):
+    if len(args) == 0:
+        return rand.random()
+    elif len(args) == 1:
+        s = 0
+        endnum = args[0]
+        return rand.randint(s, endnum)
+    elif len(args) == 2:
+        s = args[0]
+        e = args[1]
+        return rand.randint(s, e)
+    
 
 def beginShape():
     _p.points = []
@@ -152,33 +160,17 @@ _p = ppp(root)
 width = _p.width
 height = _p.height
 
-def triangle(x1, y1, x2, y2, x3, y3):
-    beginShape()
-    vertex(x1, y1)
-    vertex(x2, y2)
-    vertex(x3, y3)
-    endShape()
-
 def setup():
     global width, height, mouseX, mouseY
-    background(255)
-    noStroke()
-    for x in range(0, width, 50):
-        for y in range(0, width, 50):
-            fill(random(0, 255), random(0, 255), random(0, 255))
-            triangle(
-                random(x, x+50),
-                random(y, y+50),
-                random(x, x+50),
-                random(y, y+50),
-                random(x, x+50),
-                random(y, y+50)
-                )
+    print(random())
 
 def draw():
     global root, width, height, mouseX, mouseY
     mouseX = _p.mouseX; mouseY = _p.mouseY
-    pass
+    #background(100)
+    noStroke()
+    fill(random(255))
+    ellipse(10, 10, 100, random(50, 100))
     root.after(30, draw)
 setup()
 draw()

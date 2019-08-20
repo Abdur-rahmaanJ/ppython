@@ -1,5 +1,4 @@
-#from ppp import *
-from random import *
+import random as rand
 from math import *
 from tkinter import *
 
@@ -127,9 +126,18 @@ def ellipse(x, y, sizeX, sizeY):
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
    
-def random(s, e):
-    #global random
-    return randint(s, e)
+def random(*args):
+    if len(args) == 0:
+        return rand.random()
+    elif len(args) == 1:
+        s = 0
+        endnum = args[0]
+        return rand.randint(s, endnum)
+    elif len(args) == 2:
+        s = args[0]
+        e = args[1]
+        return rand.randint(s, e)
+    
 
 def beginShape():
     _p.points = []

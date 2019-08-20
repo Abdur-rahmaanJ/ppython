@@ -349,7 +349,9 @@ Removes strokes
 - random()
 
 ```python
+random(end) # same as random(0, end)
 random(start, end)
+random() # returns arbitrary value from 0 to 1
 ```
 
 Returns integer inclusive of start, exclusive of end
