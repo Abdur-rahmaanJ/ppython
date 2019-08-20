@@ -149,6 +149,11 @@ def vertex(x, y):
 def endShape(*args):
     _p.polygon()
 
+def dist(x1, y1, x2, y2):
+    squared_delta_x = (x2 - x1) ** 2
+    squared_delta_y = (y2 - y1) ** 2
+    return sqrt(squared_delta_x + squared_delta_y)
+
 
     
 from tkinter import *
@@ -162,7 +167,7 @@ height = _p.height
 
 def setup():
     global width, height, mouseX, mouseY
-    print(random())
+    print(dist(0, 0, 0, 100))
 
 def draw():
     global root, width, height, mouseX, mouseY

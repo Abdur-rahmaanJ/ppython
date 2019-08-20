@@ -1,5 +1,5 @@
 def setup():
-    print(random())
+    print(dist(0, 0, 0, 100))
 
 def draw():
     #background(100)

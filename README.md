@@ -268,6 +268,26 @@ def draw():
 
 # Docs
 
+### constants
+
+- mouseX
+
+position of x-coord of mouse
+
+- mouseY
+
+position of y-coord of mouse
+
+- width
+
+width of the canvas
+
+- height 
+
+height of the canvas
+
+### main functions
+
 - setup()
 
 Used to initialise what will be used only once
@@ -275,6 +295,8 @@ Used to initialise what will be used only once
 - draw()
 
 code to be looped is placed in it
+
+### graphics
 
 - line()
 
@@ -293,6 +315,18 @@ rect(x, y, width, height)
 ```python
 ellipse(x, y, width, height)
 ```
+
+- beginShape()
+
+```python
+beginShape()
+vertex(x1, y1)
+vertex(x2, y2)
+vertex(x3, y3)
+endShape()
+```
+
+### fill control
 
 - background()
 
@@ -346,6 +380,8 @@ noStroke()
 
 Removes strokes
 
+### utility
+
 - random()
 
 ```python
@@ -356,19 +392,13 @@ random() # returns arbitrary value from 0 to 1
 
 Returns integer inclusive of start, exclusive of end
 
-- beginShape()
+- dist
 
 ```python
-beginShape()
-vertex(x1, y1)
-vertex(x2, y2)
-vertex(x3, y3)
-endShape()
+dist(x1, x2, y1, y2)
 ```
-- mouseX
 
-position of x-coord of mouse
+Returns 2D distance between 2 coordinates.
 
-- mouseY
 
-position of y-coord of mouse
+
