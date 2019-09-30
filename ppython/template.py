@@ -44,7 +44,7 @@ class ppp:
     def polygon(self):
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
-    
+
     def text(self, string, x, y):
         self.canvas.create_text(x, y, text=string)
 
@@ -159,6 +159,8 @@ def dist(x1, y1, x2, y2):
 
 def text(string, x, y):
     _p.text()
+
+
     
 from tkinter import *
 
