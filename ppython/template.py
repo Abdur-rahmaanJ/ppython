@@ -1,3 +1,5 @@
+#thx for help :)
+
 import random as rand
 from math import *
 from tkinter import *
