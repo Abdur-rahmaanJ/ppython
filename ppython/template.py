@@ -39,12 +39,12 @@ class ppp:
         self.StrokeSize_ = size
 
     def ellipse(self, x, y, sizeX, sizeY):
-        self.canvas.create_oval(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_, fill=self.Fill_,
-                                outline=self.Stroke_)
+        self.canvas.create_oval(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_,
+                                fill=self.Fill_, outline=self.Stroke_)
 
     def rect(self, x, y, sizeX, sizeY):
-        self.canvas.create_rectangle(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_, fill=self.Fill_,
-                                     outline=self.Stroke_)
+        self.canvas.create_rectangle(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_,
+                                    fill=self.Fill_, outline=self.Stroke_)
 
     def background(self, bgfill):
         self.bg_color = bgfill
