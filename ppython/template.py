@@ -20,12 +20,12 @@ class ppp:
 
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_,
-        width=self.StrokeSize_)
+                                    width=self.StrokeSize_)
 
     def text(self, str, x, y, color="black", bg=None, font_size=14):
         text_color = bg if bg else self.bg_color
         text = Label(self.canvas, text=str, bg=text_color, fg=color,
-        font=("Helvetica", font_size))
+                    font=("Helvetica", font_size))
         text.place(x=x, y=y)
 
     def stroke(self, color):
@@ -48,8 +48,8 @@ class ppp:
     def background(self, bgfill):
         self.bg_color = bgfill
         self.canvas.delete("all")
-        self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0,
-        fill=self.bg_color)
+        self.canvas.create_rectangle(0, 0, self.width+10, self.height+10,
+                                    width=0, fill=self.bg_color)
 
     def polygon(self):
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
