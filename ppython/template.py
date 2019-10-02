@@ -2,10 +2,11 @@ import random as rand
 from math import *
 from tkinter import *
 
+
 class ppp:
     def __init__(self, root):
         self.Stroke_ = "black"
-        self.Fill_="black"
+        self.Fill_ = "black"
         self.StrokeSize_ = 3
         self.sX = 500
         self.sY = 100
@@ -20,12 +21,12 @@ class ppp:
 
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_,
-                                    width=self.StrokeSize_)
+                                width=self.StrokeSize_)
 
     def text(self, str, x, y, color="black", bg=None, font_size=14):
         text_color = bg if bg else self.bg_color
         text = Label(self.canvas, text=str, bg=text_color, fg=color,
-                    font=("Helvetica", font_size))
+                     font=("Helvetica", font_size))
         text.place(x=x, y=y)
 
     def stroke(self, color):
@@ -38,25 +39,27 @@ class ppp:
         self.StrokeSize_ = size
 
     def ellipse(self, x, y, sizeX, sizeY):
-        self.canvas.create_oval(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
-            outline=self.Stroke_)
+        self.canvas.create_oval(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_, fill=self.Fill_,
+                                outline=self.Stroke_)
 
     def rect(self, x, y, sizeX, sizeY):
-        self.canvas.create_rectangle(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
-            outline=self.Stroke_)
+        self.canvas.create_rectangle(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_, fill=self.Fill_,
+                                     outline=self.Stroke_)
 
     def background(self, bgfill):
         self.bg_color = bgfill
         self.canvas.delete("all")
-        self.canvas.create_rectangle(0, 0, self.width+10, self.height+10,
-                                    width=0, fill=self.bg_color)
+        self.canvas.create_rectangle(0, 0, self.width + 10, self.height + 10,
+                                     width=0, fill=self.bg_color)
 
     def polygon(self):
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
-            outline=self.Stroke_)
+                                   outline=self.Stroke_)
+
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
+
 
 def stroke(*args):
     color = ''
@@ -79,11 +82,14 @@ def stroke(*args):
             color = ''
     _p.stroke(color)
 
+
 def noStroke():
     _p.Stroke_ = ""
 
+
 def noFill():
     _p.fill("")
+
 
 def background(*args):
     color = ''
@@ -106,6 +112,7 @@ def background(*args):
             color = ''
     _p.background(color)
 
+
 def fill(*args):
     color = ''
     if len(args) == 1:
@@ -127,14 +134,18 @@ def fill(*args):
             color = ''
     _p.fill(color)
 
+
 def strokeSize(thickness):
     _p.strokeSize(thickness)
+
 
 def ellipse(x, y, sizeX, sizeY):
     _p.ellipse(x, y, sizeX, sizeY)
 
+
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
+
 
 def random(*args):
     if len(args) == 0:
@@ -152,21 +163,21 @@ def random(*args):
 def beginShape():
     _p.points = []
 
+
 def vertex(x, y):
     _p.points.append(x)
     _p.points.append(y)
 
+
 def endShape(*args):
     _p.polygon()
+
 
 def dist(x1, y1, x2, y2):
     squared_delta_x = (x2 - x1) ** 2
     squared_delta_y = (y2 - y1) ** 2
     return sqrt(squared_delta_x + squared_delta_y)
 
-
-
-from tkinter import *
 
 root = Tk()
 root.title("processing python")
@@ -177,9 +188,11 @@ height = _p.height
 
 # ===||===
 
+
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
     #print('{}, {}'.format(x, y))
+
 
 root.bind('<Motion>', motion)
 root.mainloop()
