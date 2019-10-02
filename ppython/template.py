@@ -39,12 +39,14 @@ class ppp:
         self.StrokeSize_ = size
 
     def ellipse(self, x, y, sizeX, sizeY):
-        self.canvas.create_oval(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_,
-                                fill=self.Fill_, outline=self.Stroke_)
+        self.canvas.create_oval(x, y, x + sizeX, y + sizeY,
+                                width=self.StrokeSize_, fill=self.Fill_,
+                                outline=self.Stroke_)
 
     def rect(self, x, y, sizeX, sizeY):
-        self.canvas.create_rectangle(x, y, x + sizeX, y + sizeY, width=self.StrokeSize_,
-                                    fill=self.Fill_, outline=self.Stroke_)
+        self.canvas.create_rectangle(
+            x, y, x + sizeX, y + sizeY,
+            width=self.StrokeSize_, fill=self.Fill_, outline=self.Stroke_)
 
     def background(self, bgfill):
         self.bg_color = bgfill
@@ -53,8 +55,9 @@ class ppp:
                                      width=0, fill=self.bg_color)
 
     def polygon(self):
-        self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
-                                   outline=self.Stroke_)
+        self.canvas.create_polygon(
+            self.points, width=self.StrokeSize_,
+            fill=self.Fill_, outline=self.Stroke_)
 
 
 def line(x, y, x2, y2):
@@ -191,7 +194,7 @@ height = _p.height
 
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
-    #print('{}, {}'.format(x, y))
+#   print('{}, {}'.format(x, y))
 
 
 root.bind('<Motion>', motion)
