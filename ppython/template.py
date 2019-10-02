@@ -11,35 +11,42 @@ class ppp:
         self.sY = 100
         self.mouseX = 0
         self.mouseY = 0
-        self.canvas = Canvas(root, height=500, width=500, bg="white")
+        self.bg_color = "white"
+        self.canvas = Canvas(root, height=500, width=500, bg=self.bg_color)
         self.canvas.grid(row=0, column=0)
         self.width = int(self.canvas.cget("width"))
         self.height = int(self.canvas.cget("height"))
         self.points = []
-            
+
     def line(self, x, y, x2, y2):
-        self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
-    
+        self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_)
+
+    def text(self, str, x, y, color = "black", bg = None, font_size = 14):
+        text_color = bg if bg else self.bg_color
+        text = Label(self.canvas, text=str, bg=text_color, fg=color, font=("Helvetica", font_size))
+        text.place(x=x, y=y)
+
     def stroke(self, color):
         self.Stroke_ = color
-    
+
     def fill(self, color):
         self.Fill_ = color
-    
+
     def strokeSize(self, size):
         self.StrokeSize_ = size
-    
+
     def ellipse(self, x, y, sizeX, sizeY):
         self.canvas.create_oval(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
-    
+
     def rect(self, x, y, sizeX, sizeY):
         self.canvas.create_rectangle(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
-    
+
     def background(self, bgfill):
+        self.bg_color = bgfill
         self.canvas.delete("all")
-        self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=bgfill)
+        self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=self.bg_color)
 
     def polygon(self):
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
@@ -47,7 +54,7 @@ class ppp:
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
-    
+
 def stroke(*args):
     color = ''
     if len(args) == 1:
@@ -122,10 +129,10 @@ def strokeSize(thickness):
 
 def ellipse(x, y, sizeX, sizeY):
     _p.ellipse(x, y, sizeX, sizeY)
-    
+
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
-   
+
 def random(*args):
     if len(args) == 0:
         return rand.random()
@@ -137,7 +144,7 @@ def random(*args):
         s = args[0]
         e = args[1]
         return rand.randint(s, e)
-    
+
 
 def beginShape():
     _p.points = []
@@ -155,17 +162,17 @@ def dist(x1, y1, x2, y2):
     return sqrt(squared_delta_x + squared_delta_y)
 
 
-    
+
 from tkinter import *
 
-root = Tk() 
+root = Tk()
 root.title("processing python")
 
 _p = ppp(root)
 width = _p.width
 height = _p.height
 
-===||===
+# ===||===
 
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
