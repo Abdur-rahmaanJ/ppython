@@ -45,6 +45,9 @@ class ppp:
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
 
+    def text(self, x, y, text):
+        self.canvas.create_text(x, y, text=text)
+
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
     
@@ -125,6 +128,9 @@ def ellipse(x, y, sizeX, sizeY):
     
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
+
+def text(self, x, y, text):
+    _p.text(x, y, text)
    
 def random(*args):
     if len(args) == 0:
