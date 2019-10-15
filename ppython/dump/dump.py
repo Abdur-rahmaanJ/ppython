@@ -180,11 +180,6 @@ def draw():
 setup()
 draw()
 
-#self.canvas.create_rectangle(20, 50, 200, 100, outline="black", fill="red", width=2, stipple="gray50")
-#fill("orange")
-#ircle(10, 10)
-# ################
-
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
     #print('{}, {}'.format(x, y))
