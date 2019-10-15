@@ -20,13 +20,12 @@ def handle(text):
     with open("template.py","r") as f:
         z=f.read()
         z=z.replace("===||===",text)
-        #print(z)
      
     fw = open("dump/dump.py","w+")
     fw.write(z)
     fw.flush()
     fw.close()
-    import dump.dump 
+    import dump.dump
     
 with open(sys.argv[1]) as f:
     handle(f.read())
