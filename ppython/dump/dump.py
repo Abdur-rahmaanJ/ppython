@@ -172,7 +172,6 @@ def setup():
 def draw():
     global root, width, height, mouseX, mouseY
     mouseX = _p.mouseX; mouseY = _p.mouseY
-    #background(100)
     noStroke()
     fill(random(255))
     ellipse(10, 10, 100, random(50, 100))
@@ -180,14 +179,9 @@ def draw():
 setup()
 draw()
 
-#self.canvas.create_rectangle(20, 50, 200, 100, outline="black", fill="red", width=2, stipple="gray50")
-#fill("orange")
-#ircle(10, 10)
-# ################
 
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
-    #print('{}, {}'.format(x, y))
 
 root.bind('<Motion>', motion)
 root.mainloop()

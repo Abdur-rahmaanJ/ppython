@@ -26,11 +26,7 @@ def handle(text):
     fw.write(z)
     fw.flush()
     fw.close()
-    import dump.dump # hack way of running file
+    import dump.dump 
     
-    #with open("myF.py") as f:
-    #    exec(f.read())
-
-# print(sys.argv)
 with open(sys.argv[1]) as f:
     handle(f.read())
