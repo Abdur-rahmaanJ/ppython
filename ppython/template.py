@@ -169,7 +169,7 @@ height = _p.height
 
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
-    #print('{}, {}'.format(x, y))
+    
 
 root.bind('<Motion>', motion)
 root.mainloop()
