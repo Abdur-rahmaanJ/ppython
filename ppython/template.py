@@ -16,6 +16,8 @@ class ppp:
         self.width = int(self.canvas.cget("width"))
         self.height = int(self.canvas.cget("height"))
         self.points = []
+    def text(str,a,b):
+         print(str,a,b)
             
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
