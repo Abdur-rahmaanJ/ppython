@@ -44,6 +44,9 @@ class ppp:
     def polygon(self):
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
+        
+    def text(self, t, x, y):
+        self.canvas.create_text((x,y), text=t)
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
