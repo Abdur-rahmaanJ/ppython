@@ -16,27 +16,27 @@ class ppp:
         self.width = int(self.canvas.cget("width"))
         self.height = int(self.canvas.cget("height"))
         self.points = []
-            
+
     def line(self, x, y, x2, y2):
         self.canvas.create_line(x, y, x2, y2, fill=self.Stroke_, width=self.StrokeSize_);
-    
+
     def stroke(self, color):
         self.Stroke_ = color
-    
+
     def fill(self, color):
         self.Fill_ = color
-    
+
     def strokeSize(self, size):
         self.StrokeSize_ = size
-    
+
     def ellipse(self, x, y, sizeX, sizeY):
         self.canvas.create_oval(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
-    
+
     def rect(self, x, y, sizeX, sizeY):
         self.canvas.create_rectangle(x, y, x+sizeX, y+sizeY, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
-    
+
     def background(self, bgfill):
         self.canvas.delete("all")
         self.canvas.create_rectangle(0, 0, self.width+10, self.height+10, width=0, fill=bgfill)
@@ -47,7 +47,7 @@ class ppp:
 
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
-    
+
 def stroke(*args):
     color = ''
     if len(args) == 1:
@@ -122,10 +122,10 @@ def strokeSize(thickness):
 
 def ellipse(x, y, sizeX, sizeY):
     _p.ellipse(x, y, sizeX, sizeY)
-    
+
 def rect(x, y, sizeX, sizeY):
     _p.rect(x, y, sizeX, sizeY)
-   
+
 def random(*args):
     if len(args) == 0:
         return rand.random()
@@ -137,7 +137,7 @@ def random(*args):
         s = args[0]
         e = args[1]
         return rand.randint(s, e)
-    
+
 
 def beginShape():
     _p.points = []
@@ -155,10 +155,10 @@ def dist(x1, y1, x2, y2):
     return sqrt(squared_delta_x + squared_delta_y)
 
 
-    
+
 from tkinter import *
 
-root = Tk() 
+root = Tk()
 root.title("processing python")
 
 _p = ppp(root)
@@ -173,3 +173,6 @@ def motion(event):
 
 root.bind('<Motion>', motion)
 root.mainloop()
+
+def text(<text>, coordinate-x, coordinate-y):
+    self.canvas.create_text(x,y)
