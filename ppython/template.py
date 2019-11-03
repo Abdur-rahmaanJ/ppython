@@ -45,6 +45,9 @@ class ppp:
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
 
+    def text(self, string, x, y):
+        self.canvas.create_text(x, y, text=string)
+
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
     
@@ -153,6 +156,9 @@ def dist(x1, y1, x2, y2):
     squared_delta_x = (x2 - x1) ** 2
     squared_delta_y = (y2 - y1) ** 2
     return sqrt(squared_delta_x + squared_delta_y)
+
+def text(string, x, y):
+    _p.text()
 
 
     
