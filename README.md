@@ -1,11 +1,11 @@
 # ppython
-Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python). No dependency, no import and no run()
+Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python). No dependency, no import and no run().
 
 # Info
 
-Release name: omri
+Release name: **omri**
 
-stability: alpha, highly volatile, more to be completed
+Stability: alpha, highly volatile, more to be completed
 
 # Running
 
@@ -16,13 +16,13 @@ python ppython.py <path-to-file>/file.py
 
 # History
 
-Had this project around, removed it from the fossils graveyard when Dr. Omri Har-Shemesh came to our Python meetup, inspired by his high physics background, i was reminded of this in my cupboard and decided to open it to the world.
+Had this project lying around. Removed it from the fossils graveyard when Dr. Omri Har-Shemesh came to our Python meetup. I was inspired by his high physics background, I was reminded of this in my cupboard and decided to open it to the world.
 
-Please don't see the source code (ppython.py) else you'll chase me out of the Python kingdom
+Please don't see the source code (ppython.py) else you'll chase me out of the Python kingdom.
 
 # Why a pure python version?
 
-To simply take advantage of the huge number of machine learning, data science and normal packages available
+To simply take advantage of the huge number of machine learning, data science and normal packages available.
 
 # How is this different from p5py?
 
@@ -45,7 +45,7 @@ no need to call run() at the end
 True
 ```
 
-Absolutely no dependency
+Absolutely no dependency.
 
 # Gallery
 
