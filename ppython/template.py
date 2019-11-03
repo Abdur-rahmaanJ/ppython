@@ -165,6 +165,7 @@ _p = ppp(root)
 width = _p.width
 height = _p.height
 
+===||===
 
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
