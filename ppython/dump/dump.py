@@ -45,6 +45,9 @@ class ppp:
         self.canvas.create_polygon(self.points, width=self.StrokeSize_, fill=self.Fill_,
             outline=self.Stroke_)
 
+    def text(self, string, x, y):
+        self.canvas.create_text(x, y, text=string)
+
 def line(x, y, x2, y2):
     _p.line(x, y, x2, y2)
     
@@ -154,6 +157,9 @@ def dist(x1, y1, x2, y2):
     squared_delta_y = (y2 - y1) ** 2
     return sqrt(squared_delta_x + squared_delta_y)
 
+def text(string, x, y):
+    _p.text()
+
 
     
 from tkinter import *
@@ -167,27 +173,30 @@ height = _p.height
 
 def setup():
     global width, height, mouseX, mouseY
-    print(dist(0, 0, 0, 100))
+    size = 100
+    noStroke()
+    
+    fill(255)
+    stroke(0)
+    ellipse(150, 150, 100, 200)
+    fill(255)
+    ellipse(250, 150, 100, 200)
+
+    fill(0)
+    ellipse(225, 250, 25, 25)
+    ellipse(325, 250, 25, 25)
 
 def draw():
     global root, width, height, mouseX, mouseY
     mouseX = _p.mouseX; mouseY = _p.mouseY
-    #background(100)
-    noStroke()
-    fill(random(255))
-    ellipse(10, 10, 100, random(50, 100))
+    pass
+
     root.after(30, draw)
 setup()
 draw()
 
-#self.canvas.create_rectangle(20, 50, 200, 100, outline="black", fill="red", width=2, stipple="gray50")
-#fill("orange")
-#ircle(10, 10)
-# ################
-
 def motion(event):
     _p.mouseX, _p.mouseY = event.x, event.y
-    #print('{}, {}'.format(x, y))
 
 root.bind('<Motion>', motion)
 root.mainloop()
