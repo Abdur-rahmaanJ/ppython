@@ -1,7 +1,7 @@
 import os
 import sys
 
-def handle(text):
+def handle(text, height, width):
     tab = "    "
     nl = "\n"
     glob_set = "global width, height, mouseX, mouseY"
@@ -16,7 +16,9 @@ def handle(text):
     if (text.find(setup) != -1):
         text = ""+text+"\nsetup()"
     if (text.find(draw) != -1):
-        text = ""+text+"\ndraw()"    
+        text = ""+text+"\ndraw()"  
+
+    text = f"_p = ppp(root, {height}, {width}) \nwidth = _p.width \nheight = _p.height \n\n" + text  
     with open("template.py","r") as f:
         z=f.read()
         z=z.replace("===||===",text)
@@ -32,5 +34,14 @@ def handle(text):
     #    exec(f.read())
 
 # print(sys.argv)
+
+height = 500
+width = 500
+if len(sys.argv) == 4:
+    height = sys.argv[2]
+    width = sys.argv[3]
+elif len(sys.argv) == 3:
+    height = sys.argv[2] 
+
 with open(sys.argv[1]) as f:
-    handle(f.read())
+    handle(f.read(), height, width)
