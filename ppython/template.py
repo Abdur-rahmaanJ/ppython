@@ -3,7 +3,7 @@ from math import *
 from tkinter import *
 
 class ppp:
-    def __init__(self, root):
+    def __init__(self, root, height, width):
         self.Stroke_ = "black"
         self.Fill_="black"
         self.StrokeSize_ = 3
@@ -11,10 +11,12 @@ class ppp:
         self.sY = 100
         self.mouseX = 0
         self.mouseY = 0
-        self.canvas = Canvas(root, height=500, width=500, bg="white")
+        self.height = height
+        self.width = width
+        self.canvas = Canvas(root, height=self.height, width=self.width, bg="white")
         self.canvas.grid(row=0, column=0)
-        self.width = int(self.canvas.cget("width"))
-        self.height = int(self.canvas.cget("height"))
+        #self.width = int(self.canvas.cget("width"))
+        #self.height = int(self.canvas.cget("height"))
         self.points = []
             
     def line(self, x, y, x2, y2):
@@ -166,10 +168,6 @@ from tkinter import *
 
 root = Tk() 
 root.title("processing python")
-
-_p = ppp(root)
-width = _p.width
-height = _p.height
 
 ===||===
 
