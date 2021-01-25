@@ -11,7 +11,7 @@ Stability: alpha, highly volatile, more to be completed
 
 ```
 cd ppython/ppython
-python ppython.py <path-to-file>/file.py
+python ppython.py <path-to-file>/file.py <height> <width>
 ```
 
 # History
@@ -430,5 +430,12 @@ dist(x1, x2, y1, y2)
 
 Returns 2D distance between 2 coordinates.
 
+- Change the size of the window as you feel
 
-
+```
+python ppython.py <path-to-file>/file.py <height> <width>
+```
+- or you can change only height 
+```
+python ppython.py <path-to-file>/file.py <height> 
+```
