@@ -1,4 +1,5 @@
 # ppython
+
 Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python). No dependency, no import and no run().
 
 # Info
@@ -26,15 +27,15 @@ To simply take advantage of the huge number of machine learning, data science an
 
 # How is this different from p5py?
 
-- no dependency
+-   no dependency
 
 requires only tkinter
 
-- no imports
+-   no imports
 
-you only run your code as it should. no from x import *
+you only run your code as it should. no from x import \*
 
-- no run()
+-   no run()
 
 no need to call run() at the end
 
@@ -280,7 +281,7 @@ code:
 def setup():
     size = 100
     noStroke()
-    
+
     fill(255)
     stroke(0)
     ellipse(150, 150, 100, 200)
@@ -295,58 +296,79 @@ def draw():
     pass
 ```
 
+## Random Stroke
+
+```
+python ppython.py snippets/random_stroke.py
+```
+
+![](ppython/images/random-stroke.gif)
+
+code:
+
+```python
+def setup():
+    background(0)
+    strokeSize(20)
+    for w in range(width):
+        stroke(random(0, 255), random(0, 255), random(0, 255))
+        line(w, 0, w, height)
+
+def draw():
+    pass
+```
 
 # Docs
 
 ### constants
 
-- mouseX
+-   mouseX
 
 position of x-coord of mouse
 
-- mouseY
+-   mouseY
 
 position of y-coord of mouse
 
-- width
+-   width
 
 width of the canvas
 
-- height 
+-   height
 
 height of the canvas
 
 ### main functions
 
-- setup()
+-   setup()
 
 Used to initialise what will be used only once
 
-- draw()
+-   draw()
 
 code to be looped is placed in it
 
 ### graphics
 
-- line()
+-   line()
 
 ```python
 line(x1, y1, x2, y2)
 ```
 
-- rect()
+-   rect()
 
 ```python
 rect(x, y, width, height)
 ```
 
-- ellipse()
+-   ellipse()
 
 ```python
 ellipse(x, y, width, height)
 ```
 
-- beginShape()
+-   beginShape()
 
 ```python
 beginShape()
@@ -358,7 +380,7 @@ endShape()
 
 ### fill control
 
-- background()
+-   background()
 
 ```python
 background(r, g, b)
@@ -366,7 +388,7 @@ background(r, g, b, a)
 background(grayness) # background(100) equals background(100, 100, 100)
 ```
 
-- fill()
+-   fill()
 
 ```python
 fill(r, g, b)
@@ -376,7 +398,7 @@ fill(grayness) # fill(100) equals fill(100, 100, 100)
 
 Used to colour shapes
 
-- stroke()
+-   stroke()
 
 ```python
 stroke(r, g, b)
@@ -386,7 +408,7 @@ stroke(grayness) # stroke(100) equals stroke(100, 100, 100)
 
 Used to colour lines and boarders of shapes
 
-- strokeSize()
+-   strokeSize()
 
 ```python
 strokeSize(thickness)
@@ -394,7 +416,7 @@ strokeSize(thickness)
 
 Used to define borders of shapes
 
-- noFill()
+-   noFill()
 
 ```python
 noFill()
@@ -402,7 +424,7 @@ noFill()
 
 Removes filling
 
-- noStroke()
+-   noStroke()
 
 ```python
 noStroke()
@@ -412,7 +434,7 @@ Removes strokes
 
 ### utility
 
-- random()
+-   random()
 
 ```python
 random(end) # same as random(0, end)
@@ -422,7 +444,7 @@ random() # returns arbitrary value from 0 to 1
 
 Returns integer inclusive of start, exclusive of end
 
-- dist
+-   dist
 
 ```python
 dist(x1, x2, y1, y2)
@@ -430,12 +452,14 @@ dist(x1, x2, y1, y2)
 
 Returns 2D distance between 2 coordinates.
 
-- Change the size of the window as you feel
+-   Change the size of the window as you feel
 
 ```
 python ppython.py <path-to-file>/file.py <height> <width>
 ```
-- or you can change only height 
+
+-   or you can change only height
+
 ```
-python ppython.py <path-to-file>/file.py <height> 
+python ppython.py <path-to-file>/file.py <height>
 ```
