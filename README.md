@@ -318,6 +318,32 @@ def draw():
     pass
 ```
 
+## Mouse Motion
+
+```
+python ppython.py snippets/mouse_motion.py
+```
+
+![](ppython/images/ppython_mouse_motion.gif)
+
+code:
+
+```python
+def setup():
+    noStroke()
+
+
+def draw():
+    max_distance = dist(0, 0, width, height)
+    background(255)
+
+    for i in range(0, width + 1, 20):
+        for y in range(0, height + 1, 20):
+            size = dist(mouseX, mouseY, i, y)
+            size = size / max_distance * 66
+            ellipse(i, y, size, size)
+```
+
 # Docs
 
 ### constants
