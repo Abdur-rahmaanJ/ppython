@@ -1,4 +1,5 @@
 # ppython
+#this awesome!
 
 Implementation of [processing.org](https://www.processing.org)'s processing in pure python (processing.py runs on jython, this one runs on **pure** python). No dependency, no import and no run().
 
